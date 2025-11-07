@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questionnaire Diagnostic Opteva</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Header with logo -->
+        <div class="header">
+            <img src="images/logo.svg" alt="Opteva Logo" class="logo">
+        </div>
+
+        <!-- Introduction Page -->
+        <div id="intro-page" class="page active">
+            <div class="intro-content">
+                <h1>Auto-diagnostic - Votre niveau de pilotage</h1>
+                
+                <div class="intro-text">
+                    <h2>Contexte</h2>
+                    <p>Dans un environnement en constante évolution, les entreprises font face à une multitude de défis : stratégie, innovation, transformation digitale, pressions concurrentielles, réglementaires et environnementales. Plus que jamais, le pilotage s'impose comme un levier essentiel pour naviguer dans cette complexité.</p>
+                    
+                    <h2>Comment savoir si votre fonction Finance et Contrôle de Gestion répond aux enjeux de votre organisation ?</h2>
+                    
+                    <p>Ce questionnaire propose une première réponse à cette question !</p>
+                    
+                    <p>Il s'articule autour de <strong>3 dimensions</strong> qui influencent la complexité de votre activité :</p>
+                    
+                    <ul class="custom-list">
+                        <li><strong>Votre organisation</strong> : structure, processus et moyens de production</li>
+                        <li><strong>Votre offre</strong> : produits, services et relation client</li>
+                        <li><strong>Votre environnement</strong> : marché, concurrence et contraintes externes</li>
+                    </ul>
+                    
+                    <p>Pour chaque dimension, <strong>9 propositions</strong> vous sont soumises. Sélectionnez celles qui correspondent le mieux à votre réalité. Plus vous en cochez, plus votre situation est jugée complexe.</p>
+                    
+                    <h2>À la fin du questionnaire</h2>
+                    
+                    <p>Un <strong>score de 1 à 5</strong> est attribué pour chacune des 3 dimensions. Un graphique radar vous permettra de visualiser rapidement votre positionnement.</p>
+                    
+                    <p>En fonction de votre score moyen, vous découvrirez :</p>
+                    
+                    <ul class="custom-list">
+                        <li>Le <strong>niveau de service</strong> attendu de votre Direction Financière</li>
+                        <li>Le <strong>degré de maîtrise</strong> recommandé pour vos outils et processus de gestion</li>
+                    </ul>
+                    
+                    <div class="highlight-box">
+                        <p><strong>Prêt à évaluer votre niveau de pilotage ?</strong></p>
+                        <p>Lancez le diagnostic et découvrez comment renforcer votre performance !</p>
+                    </div>
+                </div>
+                
+                <button class="btn-primary" onclick="startQuestionnaire()">Commencer le test</button>
+            </div>
+        </div>
+
+        <!-- Question 1 Page -->
+        <div id="question1-page" class="page">
+            <div class="question-content">
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div id="progress-fill" class="progress-fill"></div>
+                    </div>
+                    <div class="progress-text">
+                        <span id="progress-percentage">33%</span> complété
+                    </div>
+                </div>
+
+                <h2>Question 1 : Organisation</h2>
+                <p class="question-subtitle">Quels sont les éléments qui caractérisent votre organisation et son contexte ?</p>
+                
+                <div class="checkboxes">
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="q1" value="1">
+                        <span>Virage stratégique qui nécessite une réflexion en profondeur sur la valeur et les coûts associés</span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="q1" value="1">
+                        <span>Variété des moyens et des process de production</span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="q1" value="1">
+                        <span>Multi société / pays</span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="q1" value="1">
+                        <span>Politique d'amélioration continue</span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="q1" value="1">
+                        <span>Croissance externe ou une contraction de l'organisation et de ses activités</span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="q1" value="1">
+                        <span>Process d'innovation et de R&D clé pour le développement de l'entreprise</span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="q1" value="1">
+                        <span>Poids des coûts indirects > 25 %</span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="q1" value="1">
+                        <span>Complexité de l'organisation (matricielle, variété des fonctions)</span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="q1" value="1">
+                        <span>Fonctionnement capacitaire</span>
+                    </label>
+                </div>
+
+                <div class="navigation-buttons">
+                    <button class="btn-secondary" onclick="goToPage('intro')">Précédent</button>
+                    <button class="btn-primary" onclick="goToPage('question2')">Suivant</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Question 2 Page -->
+        <div id="question2-page" class="page">
+            <div class="question-content">
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div id="progress-fill2" class="progress-fill"></div>
+                    </div>
+                    <div class="progress-text">
+                        <span id="progress-percentage2">67%</span> complété
+                    </div>
+                </div>
+
+                <h2>Question 2 : Offre</h2>
+                <p class="question-subtitle">Comment décririez-vous votre offre de produits et de services ?</p>
+                
+                <div class="checkboxes">
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="q2" value="1">
+                        <span>Multi-canal - Multi-marché</span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="q2" value="1">
+                        <span>Soumise à saisonnalité</span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="q2" value="1">
+                        <span>Variété des attentes / exigences clients</span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="q2" value="1">
+                        <span>Diversité / complexité de l'offre (largeur et profondeur de gamme)</span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="q2" value="1">
+                        <span>Personnalisation du produit et du service par le jeu des options</span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="q2" value="1">
+                        <span>Production à la demande (juste à temps)</span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="q2" value="1">
+                        <span>Cycles de vie produit/service courts, renouvellement rapide des gammes</span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="q2" value="1">
+                        <span>Variété de la production : grande série et petites série, sur-mesure</span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="q2" value="1">
+                        <span>Contrats pluriannuels</span>
+                    </label>
+                </div>
+
+                <div class="navigation-buttons">
+                    <button class="btn-secondary" onclick="goToPage('question1')">Précédent</button>
+                    <button class="btn-primary" onclick="goToPage('question3')">Suivant</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Question 3 Page -->
+        <div id="question3-page" class="page">
+            <div class="question-content">
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div id="progress-fill3" class="progress-fill"></div>
+                    </div>
+                    <div class="progress-text">
+                        <span id="progress-percentage3">100%</span> complété
+                    </div>
+                </div>
+
+                <h2>Question 3 : Environnement</h2>
+                <p class="question-subtitle">Comment qualifieriez-vous votre marché et votre environnement ?</p>
+                
+                <div class="checkboxes">
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="q3" value="1">
+                        <span>Forte pression concurrentielle</span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="q3" value="1">
+                        <span>Volatilité et/ou inflation du prix des approvisionnements (matières premières et l'énergie, prestations…)</span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="q3" value="1">
+                        <span>Règlementation (CSRD, IFRS 15, prix de transfert, ISO…)</span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="q3" value="1">
+                        <span>Exigences environnementales : Clients, financeurs…</span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="q3" value="1">
+                        <span>Tensions sur le marché de l'emploi</span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="q3" value="1">
+                        <span>Accélération digitale / Industrie 4.0</span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="q3" value="1">
+                        <span>Evolution des modes de consommation</span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="q3" value="1">
+                        <span>Délocalisation de la production</span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="q3" value="1">
+                        <span>Baisse des taux de marge</span>
+                    </label>
+                </div>
+
+                <div class="navigation-buttons">
+                    <button class="btn-secondary" onclick="goToPage('question2')">Précédent</button>
+                    <button class="btn-primary" onclick="validateQuestionnaire()">Valider</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Validation Page -->
+        <div id="validation-page" class="page">
+            <div class="validation-content">
+                <div class="progress-container">
+                    <div class="progress-bar completed">
+                        <div class="progress-fill" style="width: 100%;"></div>
+                    </div>
+                    <div class="progress-text">
+                        <span>100%</span> complété ✓
+                    </div>
+                </div>
+
+                <div class="validation-message">
+                    <h2>Questionnaire complété !</h2>
+                    <p>Vous avez répondu à toutes les questions. Vous pouvez maintenant consulter vos résultats ou modifier vos réponses.</p>
+                </div>
+
+                <div class="navigation-buttons center">
+                    <button class="btn-secondary" onclick="goToPage('question1')">Modifier vos réponses</button>
+                    <button class="btn-primary" onclick="showResults()">Voir les résultats</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Results Page -->
+        <div id="results-page" class="page">
+            <div class="results-content">
+                <h1>Résultats de votre diagnostic</h1>
+                
+                <!-- Scores Table -->
+                <div class="scores-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Domaine</th>
+                                <th>Note sur 5</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Organisation</td>
+                                <td id="score-org">-</td>
+                            </tr>
+                            <tr>
+                                <td>Offre</td>
+                                <td id="score-offre">-</td>
+                            </tr>
+                            <tr>
+                                <td>Environnement / Contexte</td>
+                                <td id="score-env">-</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Radar Chart -->
+                <div class="radar-container">
+                    <canvas id="radarChart"></canvas>
+                </div>
+
+                <!-- Dynamic Content Based on Scores -->
+                <div id="interpretation-content"></div>
+
+                <div class="navigation-buttons center">
+                    <button class="btn-secondary" onclick="goToPage('question1')">Modifier vos réponses</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
